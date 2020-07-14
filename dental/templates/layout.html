@@ -135,7 +135,8 @@ section .section-title {
 <body>
     <div class="container" style="min-height:100% width:80%">
         {% include '_messages.html'%}
-        {% block content %}  {% endblock %}
+        {% block content %}  
+        {% endblock %}
         <script src="{{ url_for('static', filename='js/jquery-3.4.1.slim.min.js')}}"></script>
         <script src="{{ url_for('static', filename='js/popper.min.js')}}" ></script>
         <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}" ></script>
