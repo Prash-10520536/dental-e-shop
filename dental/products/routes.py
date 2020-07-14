@@ -5,9 +5,9 @@ from .forms import manufacturer_products, lab_products
 
 import secrets
 
-@app.route('/')
-def home():
-    return " "
+# @app.route('/')
+# def home():
+#     return " "
 
 @app.route('/addproduct_manufacturer', methods=['GET', 'POST'])
 def addproduct_manufacturer():

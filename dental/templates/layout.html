@@ -7,7 +7,6 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
     <title>D Bizz - {{title}}</title>
-    <!-- <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}"> -->
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -133,7 +132,7 @@ section .section-title {
 
 
 <body>
-    <div class="container" style="min-height:100% width:80%">
+    <div class="container" style="min-height:100%; width:80%">
         {% include '_messages.html'%}
         {% block content %}  
         {% endblock %}
