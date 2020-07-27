@@ -110,7 +110,7 @@ def getCart_clinic():
         grandtotal = ("%.2f" % (1.06 * float(subtotal))) #set float for actual value
     return render_template('products/clinic_cart.html', title='Cart', tax=tax, grandtotal=grandtotal)
 
-
+#lab_cart payment
 @app.route('/lab_cart', methods=['GET'])
 def getCart_lab():
     if 'Shoppingcart' not in session or len(session['Shoppingcart']) <= 0:

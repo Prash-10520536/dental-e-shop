@@ -9,6 +9,7 @@ from .clinic import clinic
 from .manufacturer import manufacturer
 import gc
 
+#landing
 @app.route('/')
 def homepage():
     return redirect(url_for("login"))
@@ -18,7 +19,7 @@ def register():
     form = RegistrationForm(request.form)
     if request.method == 'POST' and form.validate():
         hash_password = bcrypt.generate_password_hash(form.password.data)
-        user = User(username=form.username.data, email=form.email.data,
+        user = User(username=form.username.data, address=form.address.data, email=form.email.data,
                     password=hash_password, role_id=form.role_id.data)
         db.session.add(user)
         db.session.commit()
@@ -26,6 +27,7 @@ def register():
         return redirect(url_for('login'))
     return render_template('user/register.html', form=form, title="Registration page")
 
+#user login
 @app.route('/login', methods=['GET','POST'])
 def login():
     form = LoginForm(request.form)
@@ -71,7 +73,7 @@ def login_required(f):
             flash("You need to login first")
             return redirect(url_for('login_page'))
     return wrap
-
+#logout/session clear
 @app.route("/logout/")
 @login_required
 def logout():
